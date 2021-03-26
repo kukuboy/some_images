@@ -15,6 +15,7 @@ export default {
     return {
       page: 1,
       size: 10,
+      imagesData: [],
     };
   },
   // watch: {
@@ -42,6 +43,7 @@ export default {
         })
         .then((res) => {
           console.log(res);
+          this.imagesData = res.data;
         });
     },
   },
