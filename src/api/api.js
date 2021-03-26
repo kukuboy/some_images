@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import Axios from "axios";
 // import query from 'querystring'
 import Dialog from "@/util/dialog/dialog";
@@ -38,15 +37,13 @@ export default {
         );
         // 统一判断，如果请求成功返回数据
         let data = res.data;
-        let flag = data.flag;
-        if (flag === 0 || flag === true) {
+        let code = data.code;
+        if (code) {
           return data;
         } else {
-          if (res.data.code !== -1) {
-            Dialog.Toast({
-              content: data.msg,
-            });
-          }
+          Dialog.Toast({
+            content: data.msg,
+          });
           return data;
         }
       },
@@ -68,18 +65,18 @@ export default {
   errorHandler(err) {
     console.log("捕捉到错误", err);
   },
+  // //TODO: 查看我的奖品列表
+  // img(params) {
+  //   return httpA({
+  //     url: "/start/draw/getMyPrizes",
+  //     params,
+  //     method: "POST",
+  //   });
+  // },
   //TODO: 查看我的奖品列表
-  getMyPrizes(params) {
+  img(params) {
     return httpA({
-      url: "/start/draw/getMyPrizes",
-      params,
-      method: "POST",
-    });
-  },
-  //TODO: 查看我的奖品列表
-  getScrollbarData(params) {
-    return httpA({
-      url: "/start/draw/getScrollbarData",
+      url: "/some_images/img",
       params,
       method: "GET",
     });

@@ -1,9 +1,8 @@
-/* eslint-disable prettier/prettier */
 /*
  * @Description:
  * @Author: 水印红枫
  * @Date: 2020-05-25 09:15:19
- * @LastEditTime: 2021-03-26 16:13:00
+ * @LastEditTime: 2021-03-26 17:01:10
  * @LastEditors: 水印红枫
  */
 // const merge = require("webpack-merge");
@@ -121,10 +120,10 @@ module.exports = {
     disableHostCheck: true, // 内网穿透时使用
     proxy: {
       "/some_images": {
-        target: "http://10.3.176.49:8899",
+        target: "http://182.92.207.81:3000",
         changeOrigin: true,
         pathRewrite: {
-          "^/some_images": "/",
+          "^/some_images": "",
         },
       },
     },
