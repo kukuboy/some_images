@@ -53,7 +53,7 @@ export default {
             i.imgSrc = JSON.parse(i.imgSrc);
           }
           if (res.data.length < size) this.canQuery = false;
-          else this.this.canQuery = true;
+          else this.canQuery = true;
         });
       this.getFavorite();
     },

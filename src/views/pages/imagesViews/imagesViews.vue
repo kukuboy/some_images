@@ -9,7 +9,7 @@
       <img
         class="ImagesViews-imgFrame-img"
         v-for="(item, index) in items.imgSrc"
-        :key="'img' + index"
+        :key="'img:' + items.href + index"
         v-lazy="item"
       />
       <i
