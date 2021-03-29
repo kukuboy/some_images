@@ -33,12 +33,12 @@ export default {
   props: {
     type: {
       type: String,
-      default: "share"
-    }
+      default: "share",
+    },
   },
   data() {
     return {
-      plat: checkPlatform("plat")
+      plat: checkPlatform("plat"),
     };
   },
   methods: {
@@ -47,8 +47,8 @@ export default {
       if (vm !== null) {
         document.body.removeChild(vm);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped lang="scss">

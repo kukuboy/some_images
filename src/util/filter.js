@@ -1,5 +1,5 @@
 export default {
-  install: function(Vue) {
+  install: function (Vue) {
     Vue.filter("NumHidden", (val = 0) => {
       let num =
         val.length % 2 === 0 ? val.length / 2 : Math.ceil(val.length / 2);
@@ -10,5 +10,5 @@ export default {
         val.substring((val.length + num) / 2)
       );
     });
-  }
+  },
 };

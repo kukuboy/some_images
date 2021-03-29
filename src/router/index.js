@@ -7,7 +7,6 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
     component: Home,
     children: [
       {
@@ -15,6 +14,7 @@ const routes = [
         name: "imagesViews",
         meta: {
           title: "图片浏览",
+          keepAlive: true,
         },
         component: () => import("@/views/pages/imagesViews/imagesViews.vue"),
       },

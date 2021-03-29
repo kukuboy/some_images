@@ -18,24 +18,24 @@ export default {
   props: {
     title: {
       type: String,
-      default: "提示"
+      default: "提示",
     },
     title_show: {
       type: Boolean,
-      default: false
+      default: false,
     },
     content: {
       type: String,
-      default: "请选择评价再提交哦"
+      default: "请选择评价再提交哦",
     },
     showTime: {
       type: Number,
-      default: 3000
-    }
+      default: 3000,
+    },
   },
   data() {
     return {
-      show: false
+      show: false,
     };
   },
   watch: {
@@ -43,8 +43,8 @@ export default {
       handler(newVal) {
         this.change(newVal);
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
   mounted() {
     this.show = true;
@@ -76,8 +76,8 @@ export default {
           }
         }, this.showTime);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

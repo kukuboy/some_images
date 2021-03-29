@@ -76,7 +76,7 @@ export default {
   //TODO: 查看我的奖品列表
   img(params) {
     return httpA({
-      url: "/some_images/img",
+      url: "/some_images/getImg",
       params,
       method: "GET",
     });

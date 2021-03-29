@@ -4,9 +4,8 @@
       class="ImagesViews-img"
       v-for="(item, index) in imagesData"
       :key="'img' + index"
-      :src="item.imgSrc"
+      v-lazy="item.imgSrc"
     />
-    <img :src="imagesData[0].imgSrc"
   </div>
 </template>
 

@@ -20,10 +20,10 @@ export {
   getUrlParams,
   timeCmd,
   arrayCmd,
-  numMulti
+  numMulti,
 };
 // TODO:以对象对应键值快速排序
-const sortObject = function(arr, key, from = false) {
+const sortObject = function (arr, key, from = false) {
   if (!arr || arr.length <= 1) {
     return arr;
   }
@@ -81,7 +81,7 @@ const sortObject = function(arr, key, from = false) {
   );
 };
 // TODO:根据对应格式获取对应的日期
-const getTime = function(format, time = new Date()) {
+const getTime = function (format, time = new Date()) {
   // let time = new Date()
   // eslint-disable-next-line no-unused-vars
   let NowTime = "";
@@ -129,7 +129,7 @@ const getTime = function(format, time = new Date()) {
   return NowTime;
 };
 // TODO:获取以当前时间对比时间
-const formatTime = function(time, countdown = false) {
+const formatTime = function (time, countdown = false) {
   let nowTime = new Date().getTime();
   let inTime = new Date(time).getTime();
   // console.log(time, nowTime)
@@ -163,7 +163,7 @@ const formatTime = function(time, countdown = false) {
   }
 };
 // TODO:数组比较大小
-const arrayCmd = function(arr1, arr2) {
+const arrayCmd = function (arr1, arr2) {
   if (arr1.length >= arr2.length) {
     for (let i in arr1) {
       let o = isNaN(parseInt(arr1[i])) ? 0 : parseInt(arr1[i]);
@@ -195,13 +195,13 @@ const arrayCmd = function(arr1, arr2) {
   }
 };
 // TODO:时间对比
-const timeCmd = function(time1, time2, sp = ":") {
+const timeCmd = function (time1, time2, sp = ":") {
   let one = time1.split(sp);
   let two = time2.split(sp);
   return arrayCmd(one, two);
 };
 // TODO:光标插入
-const insertTo = function(ele, val) {
+const insertTo = function (ele, val) {
   if (document.selection) {
     let cursor = document.selection.createRange();
     cursor.text = val;
@@ -258,7 +258,7 @@ const insertTo = function(ele, val) {
 };
 
 // TODO:对象或数组深度克隆
-const deepClone = function(obj) {
+const deepClone = function (obj) {
   let newObj = Array.isArray(obj) ? [] : {};
   if (obj && typeof obj === "object") {
     for (let i in obj) {
@@ -271,7 +271,7 @@ const deepClone = function(obj) {
   return newObj;
 };
 // TODO:对象或数组啊判断是否相等
-const cmd = function(obj1, obj2, type = 0) {
+const cmd = function (obj1, obj2, type = 0) {
   if (type === 0) {
     if (obj1.length !== obj2.length) {
       return false;
@@ -300,7 +300,7 @@ const cmd = function(obj1, obj2, type = 0) {
   }
 };
 // TODO:手机端判断各个平台浏览器及操作系统平台
-const checkPlatform = function(type = "app") {
+const checkPlatform = function (type = "app") {
   // eslint-disable-next-line no-debugger
   if (type === "app") {
     if (/MicroMessenger/i.test(navigator.userAgent)) {
@@ -334,7 +334,7 @@ const checkPlatform = function(type = "app") {
   return "none";
 };
 // TODO:版本判断 格式为以V开头以.分割，且为阿拉伯数字
-const versionCmd = function(ver, currentVer) {
+const versionCmd = function (ver, currentVer) {
   let rep = /^V(\d|0\d)(\.\d|\.0\d|\.)+$/;
   // console.log(ver,currentVer,rep.test(ver),rep.test(currentVer))
   if (rep.test(ver) && rep.test(currentVer)) {
@@ -359,7 +359,7 @@ const versionCmd = function(ver, currentVer) {
   }
 };
 // TODO:检查xmlhttp是否支持
-const CheckUrlStatus = function(url) {
+const CheckUrlStatus = function (url) {
   let xmlhttp;
   if (window.XMLHttpRequest) {
     //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
@@ -369,7 +369,7 @@ const CheckUrlStatus = function(url) {
     // eslint-disable-next-line no-undef
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
-  xmlhttp.onreadystatechange = function() {
+  xmlhttp.onreadystatechange = function () {
     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
       console.log("xmlhttp");
     }
@@ -379,7 +379,7 @@ const CheckUrlStatus = function(url) {
   return xmlhttp.status === 200;
 };
 // TODO:获取url参数
-const getQueryVariable = function(variable) {
+const getQueryVariable = function (variable) {
   var query = window.location.search.substring(1);
   // debugger
   var vars = query.split("&");
@@ -392,7 +392,7 @@ const getQueryVariable = function(variable) {
   return false;
 };
 // TODO:获取url所有参数并返回对象
-const getUrlParams = function() {
+const getUrlParams = function () {
   let url = window.location.href.split("?");
   let end = {};
   try {
@@ -411,7 +411,7 @@ const getUrlParams = function() {
   }
 };
 // TODO:阿拉伯相互装换
-const getNumberType = function(num, to = "hz", from = "alb") {
+const getNumberType = function (num, to = "hz", from = "alb") {
   if (to === "hz" && from === "alb") {
     let hz;
     switch (num) {

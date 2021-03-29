@@ -6,10 +6,10 @@
  */
 // const cookieExpires = 12
 export default {
-  install: function(Vue) {
+  install: function (Vue) {
     Object.defineProperty(Vue.prototype, "$kuku", {
       value: this, // 设置值
-      writable: false // 是否可以改变，默认false，更改会报undefined
+      writable: false, // 是否可以改变，默认false，更改会报undefined
     });
   },
   setLoaclImage(name, data) {
@@ -33,5 +33,5 @@ export default {
       console.log("存储出错，请重新存储");
       return "";
     }
-  }
+  },
 };

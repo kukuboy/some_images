@@ -23,32 +23,32 @@ export default {
   props: {
     confirm_show: {
       type: Boolean,
-      default: false
+      default: false,
     },
     title: {
       type: String,
-      default: "提示"
+      default: "提示",
     },
     type: {
       type: String,
-      default: "text"
+      default: "text",
     },
     text: {
       type: String,
-      default: "这是一条提示"
+      default: "这是一条提示",
     },
     button_text: {
       type: String,
-      default: "确认"
+      default: "确认",
     },
     theme: {
       type: String,
-      default: "default"
-    }
+      default: "default",
+    },
   },
   data() {
     return {
-      style: "background-color: #FFFFFF;color:black"
+      style: "background-color: #FFFFFF;color:black",
     };
   },
   watch: {
@@ -56,8 +56,8 @@ export default {
       handler(newVal) {
         this.themeInit(newVal);
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
   methods: {
     themeInit(val) {
@@ -70,8 +70,8 @@ export default {
       if (vm !== null) {
         document.body.removeChild(vm);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped lang="scss">

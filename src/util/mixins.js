@@ -31,17 +31,17 @@ export default {
   },
   computed: {
     //计算属性
-    ...mapGetters(["loginSign", "deviceId"])
+    ...mapGetters(["loginSign", "deviceId"]),
   },
   mounted() {
     console.timeEnd("页面加载时间：");
     // setTimeout(() => {
     document.getElementById("app").classList.remove("viewFilter");
     this.$Dialog.ViewLoading({
-      state: "end"
+      state: "end",
     });
     clearTimeout(mixin_time);
     // }, 100000);
   },
-  methods: {}
+  methods: {},
 };

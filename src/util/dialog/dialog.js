@@ -16,7 +16,7 @@ const Dialog = {
   install(Vue) {
     Object.defineProperty(Vue.prototype, "$Dialog", {
       value: this,
-      writable: false
+      writable: false,
     });
   },
   Toast(options = {}) {
@@ -29,7 +29,7 @@ const Dialog = {
     div.id = "Toast";
     document.body.appendChild(div);
     let $vm = new ToastFrame({
-      el: "#Toast"
+      el: "#Toast",
     });
     if (typeof options === "object") {
       Object.assign($vm, options);
@@ -47,7 +47,7 @@ const Dialog = {
     div.id = "TipShadow";
     document.body.appendChild(div);
     let $vm = new TipShadowFrame({
-      el: "#TipShadow"
+      el: "#TipShadow",
     });
     if (typeof options === "object") {
       Object.assign($vm, options);
@@ -65,7 +65,7 @@ const Dialog = {
     div.id = "Confirm";
     document.body.appendChild(div);
     let $vm = new ConfirmFrame({
-      el: "#Confirm"
+      el: "#Confirm",
     });
     if (typeof options === "object") {
       Object.assign($vm, options);
@@ -86,13 +86,13 @@ const Dialog = {
     div.id = "ViewLoading";
     document.body.appendChild(div);
     let $vm = new ViewLoadingFrame({
-      el: "#ViewLoading"
+      el: "#ViewLoading",
     });
     if (typeof options === "object") {
       Object.assign($vm, options);
     } else if (typeof options === "string" || typeof options === "number") {
       $vm.content = options;
     }
-  }
+  },
 };
 export default Dialog;
