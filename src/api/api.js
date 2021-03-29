@@ -65,20 +65,28 @@ export default {
   errorHandler(err) {
     console.log("捕捉到错误", err);
   },
-  // //TODO: 查看我的奖品列表
-  // img(params) {
-  //   return httpA({
-  //     url: "/start/draw/getMyPrizes",
-  //     params,
-  //     method: "POST",
-  //   });
-  // },
-  //TODO: 查看我的奖品列表
+  //TODO: 获取图片
   img(params) {
     return httpA({
       url: "/some_images/getImg",
       params,
       method: "GET",
+    });
+  },
+  //TODO: 查看我的喜爱
+  getFavorite(data) {
+    return httpA({
+      url: "/some_images/getFavorite",
+      data,
+      method: "POST",
+    });
+  },
+  //TODO: 查看我的喜爱
+  updateFavorite(data) {
+    return httpA({
+      url: "/some_images/updateFavorite",
+      data,
+      method: "POST",
     });
   },
 };

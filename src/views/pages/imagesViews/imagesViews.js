@@ -16,6 +16,11 @@ export default {
       page: 1,
       size: 10,
       imagesData: [],
+      favorite: [],
+      canQuery: true,
+      dialogShow: false,
+      phone: "18860360510",
+      isFavorite: false,
     };
   },
   // watch: {
@@ -43,8 +48,48 @@ export default {
         })
         .then((res) => {
           console.log(res);
-          this.imagesData = res.data;
+          this.imagesData = this.imagesData.concat(res.data);
+          for (let i of this.imagesData) {
+            i.imgSrc = JSON.parse(i.imgSrc);
+          }
+          if (res.data.length < size) this.canQuery = false;
+          else this.this.canQuery = true;
         });
+      this.getFavorite();
+    },
+    getFavorite() {
+      this.$http
+        .getFavorite({
+          phone: this.phone,
+        })
+        .then((res) => {
+          this.favorite = JSON.parse(res.data) || [];
+        });
+    },
+    removeF(val) {
+      let index = this.favorite.indexOf(val);
+      if (index >= 0) this.favorite.splice(index, 1);
+      this.$http.updateFavorite({
+        phone: this.phone,
+        favorite: JSON.stringify(this.favorite),
+      });
+    },
+    addF(val) {
+      this.favorite.push(val);
+      this.$http.updateFavorite({
+        phone: this.phone,
+        favorite: JSON.stringify(this.favorite),
+      });
+    },
+    srcollV(e) {
+      if (
+        this.canQuery &&
+        e.target.scrollTop + e.target.clientHeight > e.target.offsetHeight
+      ) {
+        this.canQuery = false;
+        this.page++;
+        this.query();
+      }
     },
   },
 };

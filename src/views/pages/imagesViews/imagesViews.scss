@@ -1,9 +1,58 @@
 .ImagesViews {
-  width: 100%;
+  position: relative;
+  width: 100vw;
 
-  &-img {
-    width: 100vw;
-    height: 100vh;
-    content-visibility: auto;
+  &-user {
+    position: fixed;
+    font-size: 1rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
   }
+
+  &-dialog {
+    position: fixed;
+    top: 20%;
+    left: 1rem;
+    width: 5rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+
+    &-input {
+      border: 0;
+      outline: 0;
+      width: 4rem;
+      height: 1rem;
+      font-size: 0.6rem;
+    }
+
+    &-button {
+      padding: 0.2rem;
+      font-size: 0.3rem;
+      color: red;
+    }
+  }
+
+  &-imgFrame {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+
+    &-img {
+      flex-shrink: 0;
+      width: 100vw;
+    }
+
+    &-favorite {
+      position: absolute;
+      font-size: 1rem;
+      bottom: 0.5rem;
+      right: 0.5rem;
+    }
+  }
+
 }
