@@ -68,7 +68,7 @@ export default {
   //TODO: 获取图片
   img(params) {
     return httpA({
-      url: "/some_images/getImg",
+      url: "/myApp/getImg",
       params,
       method: "GET",
     });
