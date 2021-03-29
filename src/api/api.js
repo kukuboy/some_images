@@ -76,7 +76,7 @@ export default {
   //TODO: 查看我的喜爱
   getFavorite(data) {
     return httpA({
-      url: "/some_images/getFavorite",
+      url: "/myApp/getFavorite",
       data,
       method: "POST",
     });
@@ -84,7 +84,7 @@ export default {
   //TODO: 查看我的喜爱
   updateFavorite(data) {
     return httpA({
-      url: "/some_images/updateFavorite",
+      url: "/myApp/updateFavorite",
       data,
       method: "POST",
     });

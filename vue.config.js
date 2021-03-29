@@ -2,7 +2,7 @@
  * @Description:
  * @Author: 水印红枫
  * @Date: 2020-05-25 09:15:19
- * @LastEditTime: 2021-03-29 09:53:30
+ * @LastEditTime: 2021-03-29 16:52:42
  * @LastEditors: 水印红枫
  */
 // const merge = require("webpack-merge");
@@ -119,11 +119,11 @@ module.exports = {
     hotOnly: false,
     disableHostCheck: true, // 内网穿透时使用
     proxy: {
-      "/some_images": {
+      "/myApp": {
         target: "http://182.92.207.81:3000",
         changeOrigin: true,
         pathRewrite: {
-          "^/some_images": "",
+          "^/myApp": "",
         },
       },
     },
