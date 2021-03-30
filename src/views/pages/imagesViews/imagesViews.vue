@@ -1,5 +1,5 @@
 <template>
-  <div class="ImagesViews" scroll="srcollV">
+  <div class="ImagesViews" @scroll="srcollV">
     <div
       class="ImagesViews-imgFrame"
       v-for="(items, index) in imagesData"

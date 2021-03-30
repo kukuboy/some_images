@@ -33,9 +33,9 @@ export default {
   created() {
     this.query();
   },
-  mounted() {
-    this.init("https://imgpc.iimzt.com/2020/05/26b01.jpg");
-  },
+  // mounted() {
+  //  this.init()
+  // },
   // destroyed() {
   // },
   methods: {
@@ -84,7 +84,7 @@ export default {
     srcollV(e) {
       if (
         this.canQuery &&
-        e.target.scrollTop + e.target.clientHeight > e.target.offsetHeight
+        e.target.scrollTop + e.target.clientHeight + 100 > e.target.scrollHeight
       ) {
         this.canQuery = false;
         this.page++;

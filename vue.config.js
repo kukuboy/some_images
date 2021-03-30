@@ -2,7 +2,7 @@
  * @Description:
  * @Author: 水印红枫
  * @Date: 2020-05-25 09:15:19
- * @LastEditTime: 2021-03-29 16:52:42
+ * @LastEditTime: 2021-03-30 10:34:28
  * @LastEditors: 水印红枫
  */
 // const merge = require("webpack-merge");
@@ -20,7 +20,7 @@ const pagesMake = (array) => {
       filename: "index.html",
       // 当使用 title 选项时，
       // template 中的 title 标签需要是 <title><%= htmlWebpackPlugin.options.title %></title>
-      title: "中原证券",
+      title: "尽享美色",
       // 在这个页面中包含的块，默认情况下会包含
       // 提取出来的通用 chunk 和 vendor chunk。
       chunks: ["chunk-vendors", "chunk-common", "index"],

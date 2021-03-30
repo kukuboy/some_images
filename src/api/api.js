@@ -42,7 +42,7 @@ export default {
           return data;
         } else {
           Dialog.Toast({
-            content: data.msg,
+            content: data.message,
           });
           return data;
         }
