@@ -33,9 +33,9 @@ export default {
   created() {
     this.query();
   },
-  // mounted() {
-  //  this.init()
-  // },
+  mounted() {
+    this.init("https://imgpc.iimzt.com/2020/05/26b01.jpg");
+  },
   // destroyed() {
   // },
   methods: {

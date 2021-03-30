@@ -6,12 +6,13 @@
       :key="'imgFrame' + index"
       v-show="!isFavorite || (isFavorite && favorite.includes(items.href))"
     >
-      <img
-        class="ImagesViews-imgFrame-img"
-        v-for="(item, index) in items.imgSrc"
-        :key="'img:' + items.href + index"
-        v-lazy="item"
-      />
+      <a :href="items.href">
+        <img
+          class="ImagesViews-imgFrame-img"
+          referrerpolicy="no-referrer"
+          v-lazy="items.imgSrc[0]"
+        />
+      </a>
       <i
         class="ImagesViews-imgFrame-favorite iconfont icon-xiai1"
         v-if="favorite.includes(items.href)"
